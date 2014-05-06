@@ -1,6 +1,7 @@
 package swordfish;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.PrintStream;
@@ -42,4 +43,14 @@ public class MarsRoverTest {
 
     }
 
+    @Ignore("TODO: #3 | Beverly | working on rotate story")
+    @Test
+    public void shouldRotateToTheRight() throws Exception {
+
+        rover.rotate("R");
+        rover.printStatus();
+
+        verify(mockPrintStream).println("0 0 E");
+
+    }
 }
