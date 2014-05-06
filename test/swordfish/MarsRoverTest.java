@@ -40,5 +40,56 @@ public class MarsRoverTest {
 
         verify(mockPrintStream).println("0 1 N");
 
+        rover.move();
+        rover.printStatus();
+
+        verify(mockPrintStream).println("0 2 N");
+
+
+    }
+
+    @Test
+    public void shouldMoveForwardOneSpaceToTheEast() throws Exception {
+
+        PrintStream newMockPrintStream = mock(PrintStream.class);
+        int[] newInitialPosition = new int[]{0, 0};
+        String newInitialDirection = "E";
+        MarsRover newRover = new MarsRover(newInitialPosition, newInitialDirection, newMockPrintStream);
+
+        newRover.move();
+        newRover.printStatus();
+
+        verify(newMockPrintStream).println("1 0 E");
+
+    }
+
+    @Test
+    public void shouldMoveForwardOneSpaceToTheWest() throws Exception {
+
+        PrintStream newMockPrintStream = mock(PrintStream.class);
+        int[] newInitialPosition = new int[]{0, 0};
+        String newInitialDirection = "W";
+        MarsRover newRover = new MarsRover(newInitialPosition, newInitialDirection, newMockPrintStream);
+
+        newRover.move();
+        newRover.printStatus();
+
+        verify(newMockPrintStream).println("-1 0 W");
+
+    }
+
+    @Test
+    public void shouldMoveForwardOneSpaceToTheSouth() throws Exception {
+
+        PrintStream newMockPrintStream = mock(PrintStream.class);
+        int[] newInitialPosition = new int[]{0, 0};
+        String newInitialDirection = "S";
+        MarsRover newRover = new MarsRover(newInitialPosition, newInitialDirection, newMockPrintStream);
+
+        newRover.move();
+        newRover.printStatus();
+
+        verify(newMockPrintStream).println("0 -1 S");
+
     }
 }
