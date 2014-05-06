@@ -22,4 +22,8 @@ public class MarsRover {
         printStream.println(statusToPrint);
 
     }
+
+    public void move() {
+
+    }
 }

@@ -11,7 +11,7 @@ import static org.mockito.Mockito.verify;
 public class MarsRoverTest {
 
     @Test
-    public void shouldPrintStatus() throws Exception {
+    public void shouldFormatAndPrintStatus() throws Exception {
 
         PrintStream mockPrintStream = mock(PrintStream.class);
         int[] initialPosition = {0, 0};
@@ -24,7 +24,7 @@ public class MarsRoverTest {
 
     }
 
-    @Ignore("TODO: #2 | Beverly | fixing up Story #1 first")
+    @Ignore("#2 | Beverly | TODO: working on functional test")
     @Test
     public void shouldMoveForwardOneSpace() throws Exception {
 

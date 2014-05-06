@@ -16,6 +16,7 @@ public class App {
 
     public void start() {
 
+        marsRover.move();
         marsRover.printStatus();
 
     }
