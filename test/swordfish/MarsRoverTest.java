@@ -21,16 +21,4 @@ public class MarsRoverTest {
 
     }
 
-    @Test
-    public void shouldStandStillFacingSouth() throws Exception {
-
-        PrintStream mockPrintStream = mock(PrintStream.class);
-        MarsRover rover = new MarsRover("0,0,S", mockPrintStream);
-
-        rover.printStatus();
-
-        verify(mockPrintStream).println("0,0,S");
-
-    }
-
 }
