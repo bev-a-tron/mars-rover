@@ -9,8 +9,9 @@ public class App {
     }
 
     public App() {
-        String initialPosition = "0 0 N";
-        this.marsRover = new MarsRover(initialPosition, System.out);
+        int[] initialPosition = {0, 0};
+        String initialDirection = "N";
+        this.marsRover = new MarsRover(initialPosition, initialDirection, System.out);
     }
 
     public void start() {
