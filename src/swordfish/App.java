@@ -1,25 +1,20 @@
 package swordfish;
 
-import java.io.PrintStream;
-
 public class App {
 
-    private final PrintStream printStream;
     private MarsRover marsRover;
 
-    public App(MarsRover marsRover, PrintStream printStream) {
+    public App(MarsRover marsRover) {
         this.marsRover = marsRover;
-        this.printStream = printStream;
     }
 
     public App() {
-        this.marsRover = new MarsRover("");
-        this.printStream = System.out;
+        this.marsRover = new MarsRover("0 0 N", System.out);
     }
 
     public void start() {
 
-        marsRover.printStatus(printStream);
+        marsRover.printStatus();
 
     }
 

@@ -12,10 +12,10 @@ public class MarsRoverTest {
     @Test
     public void shouldStandStill() throws Exception {
 
-        MarsRover rover = new MarsRover("0,0,N");
         PrintStream mockPrintStream = mock(PrintStream.class);
+        MarsRover rover = new MarsRover("0,0,N", mockPrintStream);
 
-        rover.printStatus(mockPrintStream);
+        rover.printStatus();
 
         verify(mockPrintStream).println("0,0,N");
 
@@ -24,10 +24,10 @@ public class MarsRoverTest {
     @Test
     public void shouldStandStillFacingSouth() throws Exception {
 
-        MarsRover rover = new MarsRover("0,0,S");
         PrintStream mockPrintStream = mock(PrintStream.class);
+        MarsRover rover = new MarsRover("0,0,S", mockPrintStream);
 
-        rover.printStatus(mockPrintStream);
+        rover.printStatus();
 
         verify(mockPrintStream).println("0,0,S");
 

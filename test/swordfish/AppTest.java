@@ -12,13 +12,12 @@ public class AppTest {
     @Test
     public void shouldPrintStatus() throws Exception {
 
-        PrintStream printStream = mock(PrintStream.class);
         MarsRover mockMarsRover = mock(MarsRover.class);
-        App app = new App(mockMarsRover, printStream);
+        App app = new App(mockMarsRover);
 
         app.start();
 
-        verify(mockMarsRover).printStatus(printStream);
+        verify(mockMarsRover).printStatus();
 
     }
 
