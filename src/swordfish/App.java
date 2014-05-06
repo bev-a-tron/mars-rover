@@ -14,11 +14,19 @@ public class App {
         this.marsRover = new MarsRover(initialPosition, initialDirection, System.out);
     }
 
-    public void start() {
+    public void start(String input) {
 
-        marsRover.move();
+        for (String command: input.split("")) {
+            if (command.equals("M")) {
+                marsRover.move();
+            } else if (command.equals("L")) {
+                marsRover.rotate("L");
+            } else if (command.equals("R")) {
+                marsRover.rotate("R");
+            }
+        }
+
         marsRover.printStatus();
-
     }
 
 }

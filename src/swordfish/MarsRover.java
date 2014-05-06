@@ -35,4 +35,8 @@ public class MarsRover {
             position[0] --;
         }
     }
+
+    public void rotate(String rotateDirection) {
+
+    }
 }
