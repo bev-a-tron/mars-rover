@@ -16,7 +16,9 @@ public class MarsRover {
 
     public void printStatus() {
 
-        String statusToPrint = initialPosition[0] + " " + initialPosition[1] + " " + initialDirection;
+        String statusToPrint = initialPosition[0] + " "
+                             + initialPosition[1] + " "
+                             + initialDirection;
         printStream.println(statusToPrint);
 
     }
