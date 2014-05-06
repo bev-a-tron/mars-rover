@@ -9,7 +9,8 @@ public class App {
     }
 
     public App() {
-        this.marsRover = new MarsRover("0 0 N", System.out);
+        String initialPosition = "0 0 N";
+        this.marsRover = new MarsRover(initialPosition, System.out);
     }
 
     public void start() {

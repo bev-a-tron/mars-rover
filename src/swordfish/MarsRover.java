@@ -7,9 +7,9 @@ public class MarsRover {
     private String status;
     private PrintStream printStream;
 
-    public MarsRover(String status, PrintStream printStream) {
+    public MarsRover(String initialPosition, PrintStream printStream) {
 
-        this.status = status;
+        this.status = initialPosition;
         this.printStream = printStream;
 
     }
