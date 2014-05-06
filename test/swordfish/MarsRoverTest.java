@@ -10,7 +10,7 @@ import static org.mockito.Mockito.verify;
 public class MarsRoverTest {
 
     @Test
-    public void shouldStandStill() throws Exception {
+    public void shouldPrintStatus() throws Exception {
 
         PrintStream mockPrintStream = mock(PrintStream.class);
         MarsRover rover = new MarsRover("0,0,N", mockPrintStream);
