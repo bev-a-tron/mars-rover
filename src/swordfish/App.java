@@ -13,7 +13,7 @@ public class App {
     }
 
     public App() {
-        this.marsRover = new MarsRover();
+        this.marsRover = new MarsRover("");
         this.printStream = System.out;
     }
 
