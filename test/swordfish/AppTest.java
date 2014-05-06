@@ -1,5 +1,6 @@
 package swordfish;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.mockito.Mockito.mock;
@@ -7,13 +8,20 @@ import static org.mockito.Mockito.verify;
 
 public class AppTest {
 
-    @Test
-    public void shouldTellRoverToPrintStatus() throws Exception {
+    private MarsRover mockMarsRover;
 
-        MarsRover mockMarsRover = mock(MarsRover.class);
+    @Before
+    public void setUp() throws Exception {
+
+        this.mockMarsRover = mock(MarsRover.class);
         App app = new App(mockMarsRover);
 
         app.start();
+
+    }
+
+    @Test
+    public void shouldTellRoverToPrintStatus() throws Exception {
 
         verify(mockMarsRover).printStatus();
 
@@ -21,11 +29,6 @@ public class AppTest {
 
     @Test
     public void shouldTellRoverToMove() throws Exception {
-
-        MarsRover mockMarsRover = mock(MarsRover.class);
-        App app = new App(mockMarsRover);
-
-        app.start();
 
         verify(mockMarsRover).move();
 
