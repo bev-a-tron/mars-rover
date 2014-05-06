@@ -20,4 +20,5 @@ public class MarsRoverTest {
         verify(mockPrintStream).println("0,0,N");
 
     }
+
 }
