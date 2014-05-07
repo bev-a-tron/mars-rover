@@ -4,8 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        App app = new App();
-        app.start("MMM");
+        MarsRover marsRover = new MarsRover(new int[]{0, 0}, "N", System.out);
+        marsRover.start("MMM");
 
     }
 

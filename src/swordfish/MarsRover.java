@@ -52,4 +52,19 @@ public class MarsRover {
     public void rotateLeft() {
 
     }
+
+    public void start(String input) {
+
+        for (String command: input.split("")) {
+            if (command.equals("M")) {
+                move();
+            } else if (command.equals("L")) {
+                rotateLeft();
+            } else if (command.equals("R")) {
+                rotateRight();
+            }
+        }
+
+        printStatus();
+    }
 }
