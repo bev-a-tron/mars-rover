@@ -28,11 +28,6 @@ public class MarsRover {
             }
         }
 
-        return formatStatus();
-    }
-
-    public String formatStatus() {
-
         return position[0] + " "
              + position[1] + " "
              + direction;
