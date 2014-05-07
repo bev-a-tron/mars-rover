@@ -34,6 +34,11 @@ public class MarsRover {
 
         if (direction.equals("N")) {
             position[1] ++;
+
+//            TODO | Beverly | refactoring point
+//            Point directionAsPoint = new Point(0, 1);
+//            point.plus(directionAsPoint);
+
         } else if (direction.equals("S")) {
             position[1] --;
         } else if (direction.equals("E")) {
