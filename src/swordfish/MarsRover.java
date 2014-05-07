@@ -34,19 +34,19 @@ public class MarsRover {
 
         if (this.direction.equals("N")) {
 
-            direction = new Point(0, 1);
+            direction = Direction.NORTH;
 
         } else if (this.direction.equals("S")) {
 
-            direction = new Point(0, -1);
+            direction = Direction.SOUTH;
 
         } else if (this.direction.equals("E")) {
 
-            direction = new Point(1, 0);
+            direction = Direction.EAST;
 
         } else if (this.direction.equals("W")) {
 
-            direction = new Point(-1, 0);
+            direction = Direction.WEST;
 
         }
 

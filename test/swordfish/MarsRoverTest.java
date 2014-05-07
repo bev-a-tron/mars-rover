@@ -14,9 +14,7 @@ public class MarsRoverTest {
     @Before
     public void setUp() throws Exception {
 
-        Point initialPosition = new Point(0, 0);
-        String initialDirection = "N";
-        this.rover = new MarsRover(initialPosition, initialDirection);
+        this.rover = new MarsRover(new Point(0, 0), "N");
 
     }
 
