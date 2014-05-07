@@ -20,9 +20,9 @@ public class App {
             if (command.equals("M")) {
                 marsRover.move();
             } else if (command.equals("L")) {
-                marsRover.rotate("L");
+                marsRover.rotateLeft();
             } else if (command.equals("R")) {
-                marsRover.rotate("R");
+                marsRover.rotateRight();
             }
         }
 

@@ -6,7 +6,15 @@ public class MarsRover {
 
     private int[] position;
     private String direction;
+    private Point point;
     private PrintStream printStream;
+
+    public MarsRover(int[] initialPosition, String initialDirection, Point point, PrintStream printStream) {
+        this.position = initialPosition;
+        this.direction = initialDirection;
+        this.point = point;
+        this.printStream = printStream;
+    }
 
     public MarsRover(int[] initialPosition, String initialDirection, PrintStream printStream) {
         this.position = initialPosition;
@@ -34,9 +42,14 @@ public class MarsRover {
         } else if (direction.equals("W")) {
             position[0] --;
         }
+
     }
 
-    public void rotate(String rotateDirection) {
+    public void rotateRight() {
+
+    }
+
+    public void rotateLeft() {
 
     }
 }

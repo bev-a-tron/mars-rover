@@ -25,8 +25,8 @@ public class AppTest {
         String input = "MMMRRLLLL";
         app.start(input);
         verify(mockMarsRover, times(3)).move();
-        verify(mockMarsRover, times(2)).rotate("R");
-        verify(mockMarsRover, times(4)).rotate("L");
+        verify(mockMarsRover, times(2)).rotateRight();
+        verify(mockMarsRover, times(4)).rotateLeft();
 
     }
 

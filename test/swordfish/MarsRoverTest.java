@@ -43,20 +43,15 @@ public class MarsRoverTest {
 
     }
 
-    @Ignore("TODO #3 | Beverly | implementation for rotate looks too ugly, reading clean code for now")
+    @Ignore("TODO #3 | Beverly | implementation for rotateRight looks too ugly, reading clean code for now")
     @Test
     public void shouldRotateToTheRight() throws Exception {
 
-        rover.rotate("R");
+        rover.rotateRight();
         rover.printStatus();
 
         verify(mockPrintStream).println("0 0 E");
 
-
-        rover.rotate("R");
-        rover.printStatus();
-
-        verify(mockPrintStream).println("0 0 S");
     }
 
 }
