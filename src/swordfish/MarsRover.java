@@ -6,10 +6,9 @@ public class MarsRover {
     private String direction;
     private Point point;
 
-    public MarsRover(int[] initialPosition, String initialDirection, Point point) {
-        this.position = initialPosition;
-        this.direction = initialDirection;
+    public MarsRover(Point point, String direction) {
         this.point = point;
+        this.direction = direction;
     }
 
     public MarsRover(int[] initialPosition, String initialDirection) {
@@ -17,13 +16,27 @@ public class MarsRover {
         this.direction = initialDirection;
     }
 
-    public String printStatus() {
+    public String start(String input) {
 
-        String statusToPrint = position[0] + " "
-                             + position[1] + " "
-                             + direction;
+        for (String command: input.split("")) {
+            if (command.equals("M")) {
+                move();
+            } else if (command.equals("L")) {
+                rotateLeft();
+            } else if (command.equals("R")) {
+                rotateRight();
+            }
+        }
 
-        return statusToPrint;
+        return formatStatus();
+    }
+
+    public String formatStatus() {
+
+        return position[0] + " "
+             + position[1] + " "
+             + direction;
+
     }
 
     public void move() {
@@ -46,20 +59,5 @@ public class MarsRover {
 
     public void rotateLeft() {
 
-    }
-
-    public String start(String input) {
-
-        for (String command: input.split("")) {
-            if (command.equals("M")) {
-                move();
-            } else if (command.equals("L")) {
-                rotateLeft();
-            } else if (command.equals("R")) {
-                rotateRight();
-            }
-        }
-
-        return printStatus();
     }
 }
