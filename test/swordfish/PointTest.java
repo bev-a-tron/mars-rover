@@ -13,7 +13,9 @@ public class PointTest {
         Point point = new Point(0, 1);
         Point anotherPoint = new Point(1, 1);
 
-        assertThat(point.plus(anotherPoint), is(new Point(1, 2)));
+        point.plus(anotherPoint);
+
+        assertThat(point, is(new Point(1, 2)));
 
     }
 }

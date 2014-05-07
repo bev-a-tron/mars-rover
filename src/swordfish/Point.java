@@ -33,7 +33,8 @@ public class Point {
         this.y = y;
     }
 
-    public Point plus(Point point) {
-        return new Point(this.x + point.x, this.y + point.y);
+    public void plus(Point point) {
+        this.x += point.x;
+        this.y += point.y;
     }
 }

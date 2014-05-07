@@ -24,8 +24,8 @@ public class MarsRover {
             }
         }
 
-        return position[0] + " "
-             + position[1] + " "
+        return point.x + " "
+             + point.y + " "
              + direction;
 
     }
@@ -35,14 +35,26 @@ public class MarsRover {
         if (direction.equals("N")) {
             position[1] ++;
 
+            Point directionAsPoint = new Point(0, 1);
+            point.plus(directionAsPoint);
+
         } else if (direction.equals("S")) {
             position[1] --;
+
+            Point directionAsPoint = new Point(0, -1);
+            point.plus(directionAsPoint);
 
         } else if (direction.equals("E")) {
             position[0] ++;
 
+            Point directionAsPoint = new Point(1, 0);
+            point.plus(directionAsPoint);
+
         } else if (direction.equals("W")) {
             position[0] --;
+
+            Point directionAsPoint = new Point(-1, 0);
+            point.plus(directionAsPoint);
         }
 
     }
