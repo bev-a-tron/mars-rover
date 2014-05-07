@@ -27,15 +27,6 @@ public class MarsRoverTest {
 
     }
 
-    @Test
-    public void shouldMoveUsingPoints() throws Exception {
-
-        String initialDirection = "N";
-        MarsRover roverUsingPoint = new MarsRover(new Point(0, 0), initialDirection);
-        assertThat(roverUsingPoint.start("MMM"), is("0 3 N"));
-
-    }
-
     @Ignore("TODO #3 | Beverly | implementation for rotateRight looks too ugly, reading clean code for now")
     @Test
     public void shouldRotateToTheRight() throws Exception {
