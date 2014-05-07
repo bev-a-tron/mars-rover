@@ -4,53 +4,37 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import java.io.PrintStream;
-
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 public class MarsRoverTest {
 
-    private PrintStream mockPrintStream;
     private MarsRover rover;
 
     @Before
     public void setUp() throws Exception {
 
-        this.mockPrintStream = mock(PrintStream.class);
         int[] initialPosition = new int[]{0, 0};
         String initialDirection = "N";
-        this.rover = new MarsRover(initialPosition, initialDirection, mockPrintStream);
+        this.rover = new MarsRover(initialPosition, initialDirection);
 
     }
 
     @Test
-    public void shouldFormatAndPrintStatus() throws Exception {
+    public void shouldMove() throws Exception {
 
-        rover.printStatus();
-
-        verify(mockPrintStream).println("0 0 N");
+        assertThat(rover.start("MMM"), is("0 3 N"));
 
     }
 
-    @Test
-    public void shouldMoveForwardOneSpace() throws Exception {
-
-        rover.move();
-        rover.printStatus();
-
-        verify(mockPrintStream).println("0 1 N");
-
-    }
 
     @Ignore("TODO #3 | Beverly | implementation for rotateRight looks too ugly, reading clean code for now")
     @Test
     public void shouldRotateToTheRight() throws Exception {
 
         rover.rotateRight();
-        rover.printStatus();
 
-        verify(mockPrintStream).println("0 0 E");
+        assertThat(rover.start("RRR"), is("0 0 W"));
 
     }
 

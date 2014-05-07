@@ -1,34 +1,29 @@
 package swordfish;
 
-import java.io.PrintStream;
-
 public class MarsRover {
 
     private int[] position;
     private String direction;
     private Point point;
-    private PrintStream printStream;
 
-    public MarsRover(int[] initialPosition, String initialDirection, Point point, PrintStream printStream) {
+    public MarsRover(int[] initialPosition, String initialDirection, Point point) {
         this.position = initialPosition;
         this.direction = initialDirection;
         this.point = point;
-        this.printStream = printStream;
     }
 
-    public MarsRover(int[] initialPosition, String initialDirection, PrintStream printStream) {
+    public MarsRover(int[] initialPosition, String initialDirection) {
         this.position = initialPosition;
         this.direction = initialDirection;
-        this.printStream = printStream;
     }
 
-    public void printStatus() {
+    public String printStatus() {
 
         String statusToPrint = position[0] + " "
                              + position[1] + " "
                              + direction;
-        printStream.println(statusToPrint);
 
+        return statusToPrint;
     }
 
     public void move() {
@@ -53,7 +48,7 @@ public class MarsRover {
 
     }
 
-    public void start(String input) {
+    public String start(String input) {
 
         for (String command: input.split("")) {
             if (command.equals("M")) {
@@ -65,6 +60,6 @@ public class MarsRover {
             }
         }
 
-        printStatus();
+        return printStatus();
     }
 }
