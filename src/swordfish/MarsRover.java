@@ -1,9 +1,13 @@
 package swordfish;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class MarsRover {
 
     private String direction;
     private Point point;
+    private List<String> VALID_DIRECTIONS = Arrays.asList("N", "E", "S", "W");
 
     public MarsRover(Point point, String direction) {
         this.point = point;
@@ -29,6 +33,8 @@ public class MarsRover {
     }
 
     public void move() {
+
+        System.out.println(Direction.validDirections().get(VALID_DIRECTIONS.indexOf(direction)));
 
         Point direction = new Point(0, 0);
 
