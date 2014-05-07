@@ -8,12 +8,8 @@ public class MarsRover {
 
     public MarsRover(Point point, String direction) {
         this.point = point;
+        this.position = new int[]{point.x, point.y};
         this.direction = direction;
-    }
-
-    public MarsRover(int[] initialPosition, String initialDirection) {
-        this.position = initialPosition;
-        this.direction = initialDirection;
     }
 
     public String start(String input) {
