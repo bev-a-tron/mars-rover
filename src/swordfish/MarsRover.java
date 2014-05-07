@@ -30,26 +30,27 @@ public class MarsRover {
 
     public void move() {
 
-        if (direction.equals("N")) {
+        Point direction = new Point(0, 0);
 
-            Point directionAsPoint = new Point(0, 1);
-            point.plus(directionAsPoint);
+        if (this.direction.equals("N")) {
 
-        } else if (direction.equals("S")) {
+            direction = new Point(0, 1);
 
-            Point directionAsPoint = new Point(0, -1);
-            point.plus(directionAsPoint);
+        } else if (this.direction.equals("S")) {
 
-        } else if (direction.equals("E")) {
+            direction = new Point(0, -1);
 
-            Point directionAsPoint = new Point(1, 0);
-            point.plus(directionAsPoint);
+        } else if (this.direction.equals("E")) {
 
-        } else if (direction.equals("W")) {
+            direction = new Point(1, 0);
 
-            Point directionAsPoint = new Point(-1, 0);
-            point.plus(directionAsPoint);
+        } else if (this.direction.equals("W")) {
+
+            direction = new Point(-1, 0);
+
         }
+
+        point.plus(direction);
 
     }
 
