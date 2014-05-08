@@ -30,7 +30,7 @@ public class MarsRoverTest {
 
         MarsRover rover = new MarsRover(new Point(0, 0), "N");
 
-        Point testPoint = rover.directionAsPoint();
+        Point testPoint = rover.direction.directionAsPoint();
 
         assertThat(testPoint, is(new Point(0, 1)));
     }

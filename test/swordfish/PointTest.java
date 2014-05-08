@@ -18,4 +18,5 @@ public class PointTest {
         assertThat(point, is(new Point(1, 2)));
 
     }
+
 }
