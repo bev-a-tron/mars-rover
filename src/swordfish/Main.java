@@ -4,10 +4,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-        MarsRover marsRover = new MarsRover(0, 0, "N");
-        String finalPosition = marsRover.start("MMM");
-        System.out.println(finalPosition);
+        App app = new App();
 
+        String data = "5 5\n1 2 N\nLMLMLMLMM\n3 3 E\nMMRMMRMRRM";
+
+        String finalPosition = app.start(data);
+
+        System.out.println(finalPosition);
     }
 
 }
