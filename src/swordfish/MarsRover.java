@@ -5,8 +5,8 @@ public class MarsRover {
     private Direction direction;
     private Point point;
 
-    public MarsRover(Point point, String direction) {
-        this.point = point;
+    public MarsRover(int x, int y, String direction) {
+        this.point = new Point(x, y);
         this.direction = new Direction(direction);
     }
 
