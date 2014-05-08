@@ -33,31 +33,11 @@ public class MarsRover {
     }
 
     public void move() {
+        point.plus(directionAsPoint());
+    }
 
-        System.out.println(Direction.validDirections().get(VALID_DIRECTIONS.indexOf(direction)));
-
-        Point direction = new Point(0, 0);
-
-        if (this.direction.equals("N")) {
-
-            direction = Direction.NORTH;
-
-        } else if (this.direction.equals("S")) {
-
-            direction = Direction.SOUTH;
-
-        } else if (this.direction.equals("E")) {
-
-            direction = Direction.EAST;
-
-        } else if (this.direction.equals("W")) {
-
-            direction = Direction.WEST;
-
-        }
-
-        point.plus(direction);
-
+    public Point directionAsPoint() {
+        return Direction.validDirections().get(VALID_DIRECTIONS.indexOf(this.direction));
     }
 
     public void rotateRight() {

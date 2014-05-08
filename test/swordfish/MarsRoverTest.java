@@ -40,12 +40,12 @@ public class MarsRoverTest {
 
     }
 
-    @Ignore("TODO | Beverly | Working on refactoring directions")
     @Test
     public void shouldRetrieveDirectionPoint() throws Exception {
 
-        String direction = "N";
-        Point testPoint = Direction.validDirections().get(VALID_DIRECTIONS.indexOf(direction));
+        MarsRover rover = new MarsRover(new Point(0, 0), "N");
+
+        Point testPoint = rover.directionAsPoint();
 
         assertThat(testPoint, is(new Point(0, 1)));
     }
