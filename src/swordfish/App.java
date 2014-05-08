@@ -12,7 +12,7 @@ public class App {
         MarsRover marsRover = constructRover(input[1]);
         String commands = input[2];
 
-        return marsRover.start(commands);
+        return marsRover.followCommands(commands);
 
     }
 

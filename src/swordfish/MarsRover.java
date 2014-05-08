@@ -13,17 +13,12 @@ public class MarsRover {
         this.direction = direction;
     }
 
-    public String start(String input) {
-
-        Map<String, Command> stringToCommand = new HashMap<String, Command>();
-        stringToCommand.put("M", new MoveCommand(this));
-        stringToCommand.put("L", new RotateLeftCommand(this));
-        stringToCommand.put("R", new RotateRightCommand(this));
+    public String followCommands(String input) {
 
         for (String letter: input.split("")) {
 
-            if (stringToCommand.containsKey(letter)) {
-                Command command = stringToCommand.get(letter);
+            if (commandMapper().containsKey(letter)) {
+                Command command = commandMapper().get(letter);
                 command.execute();
             }
         }
@@ -34,7 +29,15 @@ public class MarsRover {
 
     }
 
-    public void move() {
+    private Map<String, Command> commandMapper() {
+        Map<String, Command> stringToCommand = new HashMap<String, Command>();
+        stringToCommand.put("M", new MoveCommand(this));
+        stringToCommand.put("L", new RotateLeftCommand(this));
+        stringToCommand.put("R", new RotateRightCommand(this));
+        return stringToCommand;
+    }
+
+    public void moveForward() {
         position.plus(direction.directionAsPoint());
     }
 

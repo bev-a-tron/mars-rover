@@ -12,7 +12,7 @@ public class MarsRoverTest {
 
         MarsRover rover = new MarsRover(new Point(0, 0), new Direction("N"));
 
-        assertThat(rover.start("MMM"), is("0 3 N"));
+        assertThat(rover.followCommands("MMM"), is("0 3 N"));
 
     }
 
@@ -21,7 +21,7 @@ public class MarsRoverTest {
 
         MarsRover rover = new MarsRover(new Point(0, 0), new Direction("E"));
 
-        assertThat(rover.start("MMM"), is("3 0 E"));
+        assertThat(rover.followCommands("MMM"), is("3 0 E"));
 
     }
 
@@ -30,7 +30,7 @@ public class MarsRoverTest {
 
         MarsRover rover = new MarsRover(new Point(0, 0), new Direction("N"));
 
-        assertThat(rover.start("RRR"), is("0 0 W"));
+        assertThat(rover.followCommands("RRR"), is("0 0 W"));
 
     }
 
@@ -39,7 +39,7 @@ public class MarsRoverTest {
 
         MarsRover rover = new MarsRover(new Point(0, 0), new Direction("N"));
 
-        assertThat(rover.start("LLL"), is("0 0 E"));
+        assertThat(rover.followCommands("LLL"), is("0 0 E"));
 
     }
 

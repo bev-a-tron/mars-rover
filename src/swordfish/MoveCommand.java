@@ -11,7 +11,7 @@ public class MoveCommand implements Command {
     @Override
     public void execute() {
 
-        rover.move();
+        rover.moveForward();
 
     }
 }
