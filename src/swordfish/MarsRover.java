@@ -20,7 +20,7 @@ public class MarsRover {
             if (command.equals("M")) {
                 move();
             } else if (command.equals("L")) {
-                rotateLeft();
+                rotate("L");
             } else if (command.equals("R")) {
                 rotate("R");
             }
@@ -50,16 +50,9 @@ public class MarsRover {
             incrementDirection = 3;
         }
 
-        int currentDirectionPlus90Degrees = VALID_DIRECTIONS.indexOf(this.direction) + incrementDirection;
-        direction = VALID_DIRECTIONS.get(currentDirectionPlus90Degrees % 4);
+        int newDirection = VALID_DIRECTIONS.indexOf(this.direction) + incrementDirection;
+        direction = VALID_DIRECTIONS.get(newDirection % 4);
 
     }
 
-    public void rotateLeft() {
-
-        int currentDirectionMinus90Degrees = VALID_DIRECTIONS.indexOf(this.direction) + 3;
-        direction = VALID_DIRECTIONS.get(currentDirectionMinus90Degrees % 4);
-
-
-    }
 }
