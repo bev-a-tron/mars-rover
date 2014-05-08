@@ -4,9 +4,26 @@ public class App {
 
     public String start(String data) {
 
-        MarsRover marsRover = new MarsRover(0, 0, "N");
-        return marsRover.start("MRMML");
 
+        String[] input = data.split("\n");
+
+        String sizeOfPlateau = input[0];
+        System.out.println("The size of the plateau is: " + sizeOfPlateau);
+
+        MarsRover marsRover = constructRover(input[1]);
+        String commands = input[2];
+
+        return marsRover.start(commands);
+
+    }
+
+    private MarsRover constructRover(String s) {
+        String[] position = s.split(" ");
+        int xPosition = Integer.parseInt(position[0]);
+        int yPosition = Integer.parseInt(position[1]);
+        String direction = position[2];
+
+        return new MarsRover(xPosition, yPosition, direction);
     }
 
 }

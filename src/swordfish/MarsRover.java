@@ -1,5 +1,8 @@
 package swordfish;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MarsRover {
 
     private Direction direction;
@@ -12,13 +15,16 @@ public class MarsRover {
 
     public String start(String input) {
 
-        for (String command: input.split("")) {
-            if (command.equals("M")) {
-                move();
-            } else if (command.equals("L")) {
-                rotate("L");
-            } else if (command.equals("R")) {
-                rotate("R");
+        Map<String, Command> stringToCommand = new HashMap<String, Command>();
+        stringToCommand.put("M", new MoveCommand(this));
+        stringToCommand.put("L", new RotateLeftCommand(this));
+        stringToCommand.put("R", new RotateRightCommand(this));
+
+        for (String letter: input.split("")) {
+
+            if (stringToCommand.containsKey(letter)) {
+                Command command = stringToCommand.get(letter);
+                command.execute();
             }
         }
 
@@ -32,18 +38,18 @@ public class MarsRover {
         position.plus(direction.directionAsPoint());
     }
 
-    public void rotate(String rotateDirection) {
+    public void rotateRight() {
 
-        int incrementDirection = 0;
-
-        if (rotateDirection.equals("R")) {
-            incrementDirection = 1;
-        } else if (rotateDirection.equals("L")) {
-            incrementDirection = 3;
-        }
-
-        direction.plus(incrementDirection);
+        direction.plus(1);
 
     }
+
+    public void rotateLeft() {
+
+        direction.plus(3);
+
+    }
+
+
 
 }
