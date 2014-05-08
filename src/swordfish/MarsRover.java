@@ -2,7 +2,7 @@ package swordfish;
 
 public class MarsRover {
 
-    Direction direction;
+    private Direction direction;
     private Point point;
 
     public MarsRover(Point point, String direction) {

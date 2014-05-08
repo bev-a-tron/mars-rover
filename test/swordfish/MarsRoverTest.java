@@ -26,17 +26,6 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void shouldRetrieveDirectionPoint() throws Exception {
-
-        MarsRover rover = new MarsRover(new Point(0, 0), "N");
-
-        Point testPoint = rover.direction.directionAsPoint();
-
-        assertThat(testPoint, is(new Point(0, 1)));
-    }
-
-
-    @Test
     public void shouldRotateToTheRight() throws Exception {
 
         MarsRover rover = new MarsRover(new Point(0, 0), "N");
