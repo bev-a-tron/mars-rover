@@ -3,10 +3,10 @@ package swordfish;
 public class MarsRover {
 
     private Direction direction;
-    private Point point;
+    private Point position;
 
     public MarsRover(int x, int y, String direction) {
-        this.point = new Point(x, y);
+        this.position = new Point(x, y);
         this.direction = new Direction(direction);
     }
 
@@ -22,14 +22,14 @@ public class MarsRover {
             }
         }
 
-        return point.x + " "
-             + point.y + " "
+        return position.x + " "
+             + position.y + " "
              + direction.cardinalDirection;
 
     }
 
     public void move() {
-        point.plus(direction.directionAsPoint());
+        position.plus(direction.directionAsPoint());
     }
 
     public void rotate(String rotateDirection) {
