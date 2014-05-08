@@ -4,7 +4,6 @@ public class App {
 
     public String start(String data) {
 
-
         String[] input = data.split("\n");
 
         String sizeOfPlateau = input[0];
@@ -17,13 +16,13 @@ public class App {
 
     }
 
-    private MarsRover constructRover(String s) {
-        String[] position = s.split(" ");
+    private MarsRover constructRover(String input) {
+        String[] position = input.split(" ");
         int xPosition = Integer.parseInt(position[0]);
         int yPosition = Integer.parseInt(position[1]);
         String direction = position[2];
 
-        return new MarsRover(xPosition, yPosition, direction);
+        return new MarsRover(new Point (xPosition, yPosition), new Direction(direction));
     }
 
 }

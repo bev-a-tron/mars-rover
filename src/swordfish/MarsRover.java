@@ -8,9 +8,9 @@ public class MarsRover {
     private Direction direction;
     private Point position;
 
-    public MarsRover(int x, int y, String direction) {
-        this.position = new Point(x, y);
-        this.direction = new Direction(direction);
+    public MarsRover(Point position, Direction direction) {
+        this.position = position;
+        this.direction = direction;
     }
 
     public String start(String input) {
@@ -39,15 +39,11 @@ public class MarsRover {
     }
 
     public void rotateRight() {
-
         direction.plus(1);
-
     }
 
     public void rotateLeft() {
-
         direction.plus(3);
-
     }
 
 

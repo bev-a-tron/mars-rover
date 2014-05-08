@@ -10,7 +10,7 @@ public class MarsRoverTest {
     @Test
     public void shouldMoveNorth() {
 
-        MarsRover rover = new MarsRover(0, 0, "N");
+        MarsRover rover = new MarsRover(new Point(0, 0), new Direction("N"));
 
         assertThat(rover.start("MMM"), is("0 3 N"));
 
@@ -19,7 +19,7 @@ public class MarsRoverTest {
     @Test
     public void shouldMoveEast() {
 
-        MarsRover rover = new MarsRover(0, 0, "E");
+        MarsRover rover = new MarsRover(new Point(0, 0), new Direction("E"));
 
         assertThat(rover.start("MMM"), is("3 0 E"));
 
@@ -28,7 +28,7 @@ public class MarsRoverTest {
     @Test
     public void shouldRotateToTheRight() {
 
-        MarsRover rover = new MarsRover(0, 0, "N");
+        MarsRover rover = new MarsRover(new Point(0, 0), new Direction("N"));
 
         assertThat(rover.start("RRR"), is("0 0 W"));
 
@@ -37,11 +37,10 @@ public class MarsRoverTest {
     @Test
     public void shouldRotateToTheLeft() {
 
-        MarsRover rover = new MarsRover(0, 0, "N");
+        MarsRover rover = new MarsRover(new Point(0, 0), new Direction("N"));
 
         assertThat(rover.start("LLL"), is("0 0 E"));
 
     }
-
 
 }
