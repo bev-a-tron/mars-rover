@@ -1,17 +1,11 @@
 package swordfish;
 
-import org.junit.Ignore;
 import org.junit.Test;
-
-import java.util.Arrays;
-import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 public class MarsRoverTest {
-
-    private List<String> VALID_DIRECTIONS = Arrays.asList("N", "E", "S", "W");
 
     @Test
     public void shouldMoveNorth() throws Exception {
@@ -51,16 +45,23 @@ public class MarsRoverTest {
     }
 
 
-    @Ignore("TODO #3 | Beverly | implementation for rotateRight looks too ugly, reading clean code for now")
     @Test
     public void shouldRotateToTheRight() throws Exception {
 
         MarsRover rover = new MarsRover(new Point(0, 0), "N");
 
-        rover.rotateRight();
-
         assertThat(rover.start("RRR"), is("0 0 W"));
 
     }
+
+    @Test
+    public void shouldRotateToTheLeft() throws Exception {
+
+        MarsRover rover = new MarsRover(new Point(0, 0), "N");
+
+        assertThat(rover.start("LLL"), is("0 0 E"));
+
+    }
+
 
 }

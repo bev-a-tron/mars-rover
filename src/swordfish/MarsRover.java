@@ -42,9 +42,16 @@ public class MarsRover {
 
     public void rotateRight() {
 
+        int currentDirectionPlus90Degrees = VALID_DIRECTIONS.indexOf(this.direction) + 1;
+        direction = VALID_DIRECTIONS.get(currentDirectionPlus90Degrees % 4);
+
     }
 
     public void rotateLeft() {
+
+        int currentDirectionMinus90Degrees = VALID_DIRECTIONS.indexOf(this.direction) + 3;
+        direction = VALID_DIRECTIONS.get(currentDirectionMinus90Degrees % 4);
+
 
     }
 }
