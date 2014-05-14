@@ -16,17 +16,20 @@ public class MarsRover {
     public String followCommands(String input) {
 
         for (String letter: input.split("")) {
-
             if (commandMapper().containsKey(letter)) {
                 Command command = commandMapper().get(letter);
                 command.execute();
             }
         }
 
+        return formattedOutput();
+
+    }
+
+    private String formattedOutput() {
         return position.x + " "
              + position.y + " "
              + direction.cardinalDirection;
-
     }
 
     private Map<String, Command> commandMapper() {
