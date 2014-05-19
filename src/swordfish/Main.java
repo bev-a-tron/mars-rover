@@ -1,12 +1,16 @@
 package swordfish;
 
+import java.io.IOException;
 import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        String data = "5 5\n1 2 N\nLMLMLMLMM\n3 3 E\nMMRMMRMRRM";
+        String fileName = "/Users/balau/Beach/MarsRover/src/swordfish/data.txt";
+
+        String data = FileReader.read(fileName);
+
         App app = new App(data);
 
         List<String> finalPosition = app.calculatePositions();
@@ -15,5 +19,6 @@ public class Main {
             System.out.println(position);
         }
     }
+
 
 }
