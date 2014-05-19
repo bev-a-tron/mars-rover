@@ -11,15 +11,15 @@ public class App {
         this.input = data.split("\n");
     }
 
-    public List<String> calculatePositions() {
+    public List<String> start() {
 
         showPlateau(input[0]);
 
-        return moveAllTheRovers(countRovers());
+        return getFinalPositionOfRovers(countRovers());
 
     }
 
-    private List<String> moveAllTheRovers(int numberOfRovers) {
+    private List<String> getFinalPositionOfRovers(int numberOfRovers) {
 
         List<String> outputForAllRovers = new ArrayList<String>();
 

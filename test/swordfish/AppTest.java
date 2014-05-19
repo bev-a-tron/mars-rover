@@ -18,7 +18,7 @@ public class AppTest {
         String input = "5 5\n0 0 N\nMRMML";
         App app = new App(input);
 
-        List<String> finalPosition = app.calculatePositions();
+        List<String> finalPosition = app.start();
 
         List<String> answer = new ArrayList<String>(Arrays.asList("2 1 N"));
         assertThat(finalPosition, is(answer));
@@ -31,7 +31,7 @@ public class AppTest {
         String input = "5 5\n1 2 N\nLMLMLMLMM";
         App app = new App(input);
 
-        List<String> finalPosition = app.calculatePositions();
+        List<String> finalPosition = app.start();
 
         List<String> answer = new ArrayList<String>(Arrays.asList("1 3 N"));
         assertEquals(answer, finalPosition);
@@ -64,7 +64,7 @@ public class AppTest {
         String input = "5 5\n1 2 N\nLMLMLMLMM\n3 3 E\nMMRMMRMRRM";
         App app = new App(input);
 
-        List<String> finalPosition = app.calculatePositions();
+        List<String> finalPosition = app.start();
 
         List<String> answer = new ArrayList<String>(Arrays.asList("1 3 N", "5 1 E"));
 
