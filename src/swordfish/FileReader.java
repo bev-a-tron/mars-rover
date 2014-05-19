@@ -15,6 +15,6 @@ public class FileReader {
             contents.append("\n");
         }
 
-        return contents.toString();
+        return contents.toString().trim();
     }
 }
