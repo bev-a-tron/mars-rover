@@ -11,11 +11,17 @@ public class App {
         this.input = data.split("\n");
     }
 
-    public List<String> start() {
-        int numberOfRovers = countRovers();
-        List<String> outputForAllRovers = new ArrayList<String>();
+    public List<String> calculatePositions() {
 
         showPlateau(input[0]);
+
+        return moveAllTheRovers(countRovers());
+
+    }
+
+    private List<String> moveAllTheRovers(int numberOfRovers) {
+
+        List<String> outputForAllRovers = new ArrayList<String>();
 
         for (int currentRover = 1; currentRover <= numberOfRovers; currentRover++) {
             int lineNumber = currentRover * 2 - 1;

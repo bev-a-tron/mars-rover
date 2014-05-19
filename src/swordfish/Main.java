@@ -9,10 +9,10 @@ public class Main {
         String data = "5 5\n1 2 N\nLMLMLMLMM\n3 3 E\nMMRMMRMRRM";
         App app = new App(data);
 
-        List<String> finalPosition = app.start();
+        List<String> finalPosition = app.calculatePositions();
 
-        for (String item : finalPosition) {
-            System.out.println(item);
+        for (String position : finalPosition) {
+            System.out.println(position);
         }
     }
 
