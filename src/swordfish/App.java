@@ -1,28 +1,45 @@
 package swordfish;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class App {
 
-    public String start(String data) {
+    private String[] input;
 
-        String[] input = data.split("\n");
-
-        String sizeOfPlateau = input[0];
-        System.out.println("The size of the plateau is: " + sizeOfPlateau);
-
-        MarsRover marsRover = constructRover(input[1]);
-        String commands = input[2];
-
-        return marsRover.followCommands(commands);
-
+    public App(String data) {
+        this.input = data.split("\n");
     }
 
-    private MarsRover constructRover(String input) {
-        String[] position = input.split(" ");
+    public List<String> start() {
+        int numberOfRovers = countRovers();
+        List<String> outputForAllRovers = new ArrayList<String>();
+
+        showPlateau(input[0]);
+
+        for (int currentRover = 1; currentRover <= numberOfRovers; currentRover++) {
+            int lineNumber = currentRover * 2 - 1;
+            MarsRover marsRover = constructRover(input[lineNumber]);
+            outputForAllRovers.add(marsRover.followCommands(input[lineNumber + 1]));
+        }
+
+        return outputForAllRovers;
+    }
+
+    private void showPlateau(String plateauInput) {
+        System.out.println("The size of the plateau is: " + plateauInput);
+    }
+
+    private MarsRover constructRover(String oneLineInput) {
+        String[] position = oneLineInput.split(" ");
         int xPosition = Integer.parseInt(position[0]);
         int yPosition = Integer.parseInt(position[1]);
         String direction = position[2];
 
-        return new MarsRover(new Point (xPosition, yPosition), new Direction(direction));
+        return new MarsRover(new Point(xPosition, yPosition), new Direction(direction));
     }
 
+    public int countRovers() {
+        return (input.length - 1) / 2;
+    }
 }

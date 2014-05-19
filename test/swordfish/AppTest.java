@@ -2,7 +2,12 @@ package swordfish;
 
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.is;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 public class AppTest {
@@ -10,11 +15,61 @@ public class AppTest {
     @Test
     public void shouldFollowInputInstructions() {
 
-        App app = new App();
-        String data = "5 5\n0 0 N\nMRMML";
+        String input = "5 5\n0 0 N\nMRMML";
+        App app = new App(input);
 
-        String finalPosition = app.start(data);
+        List<String> finalPosition = app.start();
 
-        assertThat(finalPosition, is("2 1 N"));
+        List<String> answer = new ArrayList<String>(Arrays.asList("2 1 N"));
+        assertThat(finalPosition, is(answer));
+
     }
+
+    @Test
+    public void shouldFollowInputInstructionsForOneRover() {
+
+        String input = "5 5\n1 2 N\nLMLMLMLMM";
+        App app = new App(input);
+
+        List<String> finalPosition = app.start();
+
+        List<String> answer = new ArrayList<String>(Arrays.asList("1 3 N"));
+        assertEquals(answer, finalPosition);
+
+    }
+
+    @Test
+    public void shouldGetNumberOfRoversIs2() throws Exception {
+
+        String input = "5 5\n1 2 N\nLMLMLMLMM\n3 3 E\nMMRMMRMRRM";
+        App app = new App(input);
+
+        assertThat(app.countRovers(), is(2));
+
+    }
+
+    @Test
+    public void shouldGetNumberOfRoversIs3() throws Exception {
+
+        String input = "5 5\n1 2 N\nLMLMLMLMM\n3 3 E\nMMRMMRMRRM\n1 1 W\nRRMMM";
+        App app = new App(input);
+
+        assertThat(app.countRovers(), is(3));
+
+    }
+
+    @Test
+    public void shouldFollowInputInstructionsForTwoRovers() {
+
+        String input = "5 5\n1 2 N\nLMLMLMLMM\n3 3 E\nMMRMMRMRRM";
+        App app = new App(input);
+
+        List<String> finalPosition = app.start();
+
+        List<String> answer = new ArrayList<String>(Arrays.asList("1 3 N", "5 1 E"));
+
+        assertEquals(answer, finalPosition);
+
+    }
+
 }
