@@ -39,26 +39,6 @@ public class AppTest {
     }
 
     @Test
-    public void shouldGetNumberOfRoversIs2() throws Exception {
-
-        String input = "5 5\n1 2 N\nLMLMLMLMM\n3 3 E\nMMRMMRMRRM";
-        App app = new App(input);
-
-        assertThat(app.countRovers(), is(2));
-
-    }
-
-    @Test
-    public void shouldGetNumberOfRoversIs3() throws Exception {
-
-        String input = "5 5\n1 2 N\nLMLMLMLMM\n3 3 E\nMMRMMRMRRM\n1 1 W\nRRMMM";
-        App app = new App(input);
-
-        assertThat(app.countRovers(), is(3));
-
-    }
-
-    @Test
     public void shouldFollowInputInstructionsForTwoRovers() {
 
         String input = "5 5\n1 2 N\nLMLMLMLMM\n3 3 E\nMMRMMRMRRM";
