@@ -16,7 +16,7 @@ public class AppTest {
         String input = "5 5\n1 2 N\nLMLMLMLMM";
         App app = new App(input);
 
-        List finalPosition = app.start();
+        List<String> finalPosition = app.start();
 
         List<String> answer = new ArrayList<String>(Arrays.asList("1 3 N"));
         assertEquals(answer, finalPosition);
@@ -29,7 +29,7 @@ public class AppTest {
         String input = "5 5\n1 2 N\nLMLMLMLMM\n3 3 E\nMMRMMRMRRM";
         App app = new App(input);
 
-        List finalPosition = app.start();
+        List<String> finalPosition = app.start();
 
         List<String> answer = new ArrayList<String>(Arrays.asList("1 3 N", "5 1 E"));
 

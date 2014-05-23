@@ -11,11 +11,26 @@ public class App {
         this.input = data.split("\n");
     }
 
-    public List start() {
+    public List<String> start() {
 
         showPlateau();
-        return getFinalPositionOfRovers();
 
+        List<String> finalPositionOfRovers = new ArrayList<String>();
+
+        for (int roverNumber = 1; roverNumber <= numberOfRovers(); roverNumber++) {
+            finalPositionOfRovers.add(getFinalPositionForOneRover(roverNumber));
+        }
+
+        return finalPositionOfRovers;
+
+    }
+
+    private String getFinalPositionForOneRover(int roverNumber) {
+        int roverLineNumber = roverNumber * 2 - 1;
+        int commandsLineNumber = roverLineNumber + 1;
+
+        MarsRover marsRover = constructRover(input[roverLineNumber]);
+        return marsRover.followCommands(input[commandsLineNumber]);
     }
 
     private MarsRover constructRover(String oneLineInput) {
@@ -37,20 +52,4 @@ public class App {
         return (input.length - 1) / 2;
     }
 
-    private List getFinalPositionOfRovers() {
-
-        List<String> finalPositionOfRovers = new ArrayList<String>();
-
-        for (int roverNumber = 1; roverNumber <= numberOfRovers(); roverNumber++) {
-
-            int roverLineNumber = roverNumber * 2 - 1;
-            int commandsLineNumber = roverLineNumber + 1;
-
-            MarsRover marsRover = constructRover(input[roverLineNumber]);
-            finalPositionOfRovers.add(marsRover.followCommands(input[commandsLineNumber]));
-
-        }
-
-        return finalPositionOfRovers;
-    }
 }
