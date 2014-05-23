@@ -13,9 +13,9 @@ public class Main {
 
         App app = new App(data);
 
-        List<String> finalPositions = app.start();
+        List finalPositions = app.start();
 
-        for (String position : finalPositions) {
+        for (Object position : finalPositions) {
             System.out.println(position);
         }
     }

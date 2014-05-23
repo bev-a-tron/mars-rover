@@ -11,7 +11,7 @@ public class App {
         this.input = data.split("\n");
     }
 
-    public List<String> start() {
+    public List start() {
 
         showPlateau();
         return getFinalPositionOfRovers();
@@ -37,7 +37,7 @@ public class App {
         return (input.length - 1) / 2;
     }
 
-    private List<String> getFinalPositionOfRovers() {
+    private List getFinalPositionOfRovers() {
 
         List<String> finalPositionOfRovers = new ArrayList<String>();
 
